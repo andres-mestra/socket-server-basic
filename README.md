@@ -10,3 +10,5 @@ Correr el servidor:
 ```
 yarn run dev
 ```
+Web:
+<a href="https://react-socket-server-minichat.herokuapp.com/" target="_blank">MiniChat</a>

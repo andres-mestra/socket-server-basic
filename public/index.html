@@ -11,7 +11,12 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.min.js" integrity="sha512-tXH7Av8en7+/hg0XwBppaCDPmpJhUXbZ+j7lNC4y+ZQpmCZQcgQN6RjkM7Irj1MUW7bZengfuTOqR4RzCC4bnA==" crossorigin="anonymous"></script>
   <script>
-    io('http://localhost:3000');
+    const socket = io('http://localhost:3000');
+    
+    socket.on('mensaje-bienvenida', ( data ) => {
+      console.log(data)
+    })
+
   </script>
 
 </body>

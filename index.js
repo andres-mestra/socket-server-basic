@@ -15,13 +15,12 @@ app.use( express.static(__dirname + '/public') )
 
 io.on('connection', ( socket ) => { 
   
-  socket.emit('mensaje-bienvenida', {
-    msg: 'Bienvenido al server'
-  })
-
-  socket.on('mensaje-cliente', (data) => {
+  socket.on('mensaje-to-server', (data) => {
     console.log(data)
-  })
+    
+    //Emit a todos los clientes conectados en mismo namespace
+    io.emit('mensaje-from-server', data );
+  });
 
 });
 

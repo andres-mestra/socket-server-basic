@@ -19,6 +19,10 @@ io.on('connection', ( socket ) => {
     msg: 'Bienvenido al server'
   })
 
+  socket.on('mensaje-cliente', (data) => {
+    console.log(data)
+  })
+
 });
 
 

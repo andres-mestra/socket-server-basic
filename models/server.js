@@ -2,7 +2,9 @@ const express = require('express')
 const http = require('http')
 const socketIo = require('socket.io');
 const path = require('path');
+const cors = require('cors');
 const Sockets = require('./sockets');
+const { runInThisContext } = require('vm');
 
 class Server {
   constructor() {
@@ -19,6 +21,7 @@ class Server {
   middlewares() {
     //Desplegar directorio publico
     this.app.use(express.static( path.resolve(__dirname, '../public') ))
+    this.app.use(cors())
   }
   
 
